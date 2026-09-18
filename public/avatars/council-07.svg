@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 800" role="img">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#e9eff4"/>
+      <stop offset="1" stop-color="#c6d4de"/>
+    </linearGradient>
+  </defs>
+  <rect width="600" height="800" fill="url(#bg)"/>
+  <circle cx="510" cy="110" r="140" fill="#ffffff" opacity="0.35"/>
+  <circle cx="80" cy="700" r="170" fill="#ffffff" opacity="0.25"/>
+  
+  <rect x="274" y="520" width="52" height="80" rx="12" fill="#96683c"/>
+  <path d="M115,800 C125,655 215,605 300,605 C385,605 475,655 485,800 Z" fill="#28425f"/>
+  <polygon points="258,606 300,662 300,606" fill="#ffffff" opacity="0.92"/>
+  <polygon points="342,606 300,662 300,606" fill="#ffffff" opacity="0.92"/>
+  <ellipse cx="300" cy="415" rx="100" ry="118" fill="#c68e5f"/>
+  <circle cx="201" cy="428" r="17" fill="#c68e5f"/>
+  <circle cx="399" cy="428" r="17" fill="#c68e5f"/>
+  <path d="M198,425 C194,300 246,252 300,252 C354,252 406,300 402,425 L380,425 C384,335 348,308 300,308 C252,308 216,335 220,425 Z" fill="#232323"/><rect x="194" y="395" width="24" height="70" rx="12" fill="#232323"/><rect x="382" y="395" width="24" height="70" rx="12" fill="#232323"/>
+  <line x1="335" y1="258" x2="312" y2="312" stroke="#161616" stroke-width="6" stroke-linecap="round"/>
+  <circle cx="266" cy="428" r="9.5" fill="#262626"/>
+  <circle cx="334" cy="428" r="9.5" fill="#262626"/>
+  <path d="M270,472 Q300,494 330,472" stroke="#96683c" stroke-width="7" stroke-linecap="round" fill="none"/>
+  <g stroke="#333333" stroke-width="6" fill="none"><rect x="230" y="400" width="64" height="54" rx="16"/><rect x="306" y="400" width="64" height="54" rx="16"/><line x1="294" y1="418" x2="306" y2="418"/><line x1="230" y1="410" x2="206" y2="408"/><line x1="370" y1="410" x2="394" y2="408"/></g>
+</svg>

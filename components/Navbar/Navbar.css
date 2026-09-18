@@ -1,0 +1,458 @@
+/* ─── Color tokens (matched from Angular project) ─────────────────────────── */
+:root {
+  --nav-bg: #032b41;          /* $primary from styles.scss */
+  --nav-bg-hover: #0b3e5b;    /* dropdown hover */
+  --nav-accent: #ffb703;      /* $warning — Register btn & active glow */
+  --nav-text: rgba(255, 255, 255, 0.85);
+  --nav-text-hover: #ffffff;
+  --nav-active: #ffffff;
+  --nav-border: rgba(255, 255, 255, 0.18);
+  --nav-height: 62px;
+  --nav-transition: 0.25s ease;
+}
+
+/* ─── Base ─────────────────────────────────────────────────────────────────── */
+.mcic-navbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: var(--nav-bg);
+  width: 100%;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.35);
+  font-family: 'Segoe UI', system-ui, sans-serif;
+}
+
+.mcic-navbar-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+  height: var(--nav-height);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* ─── Brand ────────────────────────────────────────────────────────────────── */
+.mcic-navbar-brand {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  text-decoration: none;
+  transition: opacity var(--nav-transition);
+}
+
+.mcic-navbar-brand:hover {
+  opacity: 0.85;
+}
+
+.mcic-navbar-brand img {
+  display: block;
+  flex-shrink: 0;
+}
+
+.mcic-brand-logo {
+  width: 42px;
+  height: 42px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.mcic-navbar-brand-name {
+  display: flex;
+  flex-direction: column;
+  margin-left: 0.6rem;
+  line-height: 1.2;
+  gap: 1px;
+}
+
+.mcic-brand-main {
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+}
+
+.mcic-brand-sub {
+  font-size: 0.72rem;
+  font-weight: 500;
+  color: var(--nav-accent);
+  letter-spacing: 0.03em;
+  white-space: nowrap;
+}
+
+/* ─── Mobile title (hidden on md+) ────────────────────────────────────────── */
+.mcic-mobile-title {
+  flex: 1;
+  color: var(--nav-accent);
+  font-size: 1.2rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  display: none;
+}
+
+/* ─── Hamburger ────────────────────────────────────────────────────────────── */
+.mcic-hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  width: 38px;
+  height: 38px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 4px;
+  flex-shrink: 0;
+}
+
+.mcic-hamburger span {
+  display: block;
+  width: 22px;
+  height: 2.5px;
+  background-color: rgba(3, 152, 158, 0.75);
+  border-radius: 2px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  transform-origin: center;
+}
+
+/* Animate to ✕ */
+.mcic-hamburger.open span:nth-child(1) { transform: translateY(7.5px) rotate(45deg); }
+.mcic-hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+.mcic-hamburger.open span:nth-child(3) { transform: translateY(-7.5px) rotate(-45deg); }
+
+/* ─── Desktop nav links container ──────────────────────────────────────────── */
+.mcic-nav-links {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-left: auto;
+}
+
+.mcic-nav-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.15rem;
+}
+
+/* ─── Nav link ─────────────────────────────────────────────────────────────── */
+.mcic-nav-link {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 0.45rem 0.75rem;
+  color: var(--nav-text);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  border-radius: 4px;
+  transition: color var(--nav-transition), background-color var(--nav-transition);
+  white-space: nowrap;
+  cursor: pointer;
+  user-select: none;
+  border: none;
+  background: transparent;
+}
+
+.mcic-nav-link:hover,
+.mcic-nav-link:focus {
+  color: var(--nav-text-hover);
+  background-color: rgba(255, 255, 255, 0.09);
+  outline: none;
+}
+
+.mcic-nav-link.active {
+  color: var(--nav-active);
+  font-weight: 600;
+}
+
+/* ─── Register button ──────────────────────────────────────────────────────── */
+.mcic-register-btn {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.4rem 1.1rem;
+  background-color: var(--nav-accent);
+  color: #032b41;
+  font-weight: 700;
+  font-size: 0.88rem;
+  text-decoration: none;
+  border-radius: 4px;
+  white-space: nowrap;
+  transition: background-color var(--nav-transition), box-shadow var(--nav-transition);
+  margin-left: 0.5rem;
+}
+
+.mcic-register-btn:hover {
+  background-color: #e6a402;
+  color: #032b41;
+  box-shadow: 0 2px 10px rgba(255, 183, 3, 0.4);
+}
+
+/* ─── Dropdown: Programme ──────────────────────────────────────────────────── */
+.mcic-dropdown-trigger {
+  cursor: pointer;
+}
+
+.nav-down-arrow {
+  width: 14px;
+  height: 14px;
+  opacity: 0.7;
+  transition: transform var(--nav-transition);
+  flex-shrink: 0;
+}
+
+.mcic-dropdown-parent {
+  position: relative;
+}
+
+.nav-dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  padding-top: 4px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  background-color: rgba(3, 43, 65, 0.96);
+  border: 1px solid var(--nav-border);
+  border-radius: 4px;
+  min-width: 230px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+}
+
+/* Show on hover (desktop) */
+.mcic-dropdown-parent:hover > .nav-dropdown-menu {
+  display: block;
+}
+
+.mcic-dropdown-parent:hover .nav-down-arrow {
+  transform: rotate(180deg);
+}
+
+/* ─── Dropdown items ───────────────────────────────────────────────────────── */
+.nav-dropdown-item {
+  position: relative;
+  border-bottom: 1px solid var(--nav-border);
+}
+
+.nav-dropdown-item:last-child {
+  border-bottom: none;
+}
+
+.nav-dropdown-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 1rem;
+  color: rgba(255, 255, 255, 0.88);
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: background-color var(--nav-transition), color var(--nav-transition);
+  white-space: nowrap;
+}
+
+.nav-dropdown-link:hover {
+  background-color: var(--nav-bg-hover);
+  color: #fff;
+}
+
+.nav-dropdown-toggle {
+  user-select: none;
+}
+
+/* ─── Leaf (sub-sub) menu ───────────────────────────────────────────────────── */
+.nav-chevron {
+  width: 13px;
+  height: 13px;
+  opacity: 0.7;
+  flex-shrink: 0;
+}
+
+.nav-leaf-menu {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 100%;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  background-color: rgba(3, 43, 65, 0.96);
+  border: 1px solid var(--nav-border);
+  min-width: 260px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.nav-dropend.open > .nav-leaf-menu,
+.nav-dropend:hover > .nav-leaf-menu {
+  display: block;
+}
+
+.nav-leaf-link {
+  display: block;
+  padding: 0.45rem 1rem;
+  color: rgba(255, 255, 255, 0.85);
+  text-decoration: none;
+  font-size: 0.85rem;
+  transition: background-color var(--nav-transition), color var(--nav-transition);
+  border-bottom: 1px solid var(--nav-border);
+}
+
+.nav-leaf-link:last-child {
+  border-bottom: none;
+}
+
+.nav-leaf-link:hover {
+  background-color: var(--nav-bg-hover);
+  color: #fff;
+}
+
+/* ─── Mobile drawer ────────────────────────────────────────────────────────── */
+.mcic-mobile-drawer {
+  display: none;
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.35s ease;
+  background-color: #032b41;
+  border-top: 1px solid var(--nav-border);
+}
+
+.mcic-mobile-drawer.open {
+  max-height: 85vh;
+  overflow-y: auto;
+}
+
+.mcic-mobile-list {
+  list-style: none;
+  margin: 0;
+  padding: 0.5rem 0;
+}
+
+.mcic-mobile-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 1.5rem;
+  color: rgba(255, 255, 255, 0.85);
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+  border: none;
+  background: transparent;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  transition: background-color var(--nav-transition), color var(--nav-transition);
+}
+
+.mcic-mobile-link:hover,
+.mcic-mobile-link.active {
+  color: #fff;
+  background-color: rgba(255, 255, 255, 0.08);
+}
+
+.mcic-register-btn.mobile {
+  margin: 0.5rem 1.5rem 0.75rem;
+  display: inline-flex;
+  width: auto;
+}
+
+/* ─── Mobile chevron ───────────────────────────────────────────────────────── */
+.mobile-chevron {
+  width: 16px;
+  height: 16px;
+  opacity: 0.7;
+  transition: transform 0.25s ease;
+  flex-shrink: 0;
+}
+
+.mobile-chevron.rotated {
+  transform: rotate(180deg);
+}
+
+/* ─── Mobile accordion ─────────────────────────────────────────────────────── */
+.mobile-accordion {
+  list-style: none;
+  margin: 0;
+  padding: 0 0 0 1rem;
+  background-color: rgba(0, 0, 0, 0.15);
+}
+
+.mobile-accordion-item {
+  border-bottom: 1px solid var(--nav-border);
+}
+
+.mobile-accordion-item:last-child {
+  border-bottom: none;
+}
+
+.mobile-accordion-trigger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0.65rem 1rem;
+  background: transparent;
+  border: none;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.88rem;
+  font-weight: 500;
+  text-align: left;
+  cursor: pointer;
+  transition: color var(--nav-transition);
+}
+
+.mobile-accordion-trigger:hover,
+.mobile-accordion-trigger.open {
+  color: #fff;
+}
+
+.mobile-sub-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+
+.mobile-sub-list.open {
+  max-height: 600px;
+}
+
+.mobile-sub-link {
+  display: block;
+  padding: 0.5rem 1rem 0.5rem 1.25rem;
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: none;
+  font-size: 0.83rem;
+  border-top: 1px solid var(--nav-border);
+  transition: color var(--nav-transition), background-color var(--nav-transition);
+}
+
+.mobile-sub-link:hover {
+  color: #fff;
+  background-color: rgba(255, 255, 255, 0.06);
+}
+
+/* ─── Responsive breakpoints ───────────────────────────────────────────────── */
+@media (max-width: 767px) {
+  .mcic-mobile-title { display: block; }
+  .mcic-hamburger    { display: flex; }
+  .mcic-nav-links    { display: none; }
+  .mcic-mobile-drawer { display: block; }
+}
+
+@media (min-width: 768px) {
+  .mcic-mobile-title  { display: none; }
+  .mcic-hamburger     { display: none; }
+  .mcic-mobile-drawer { display: none !important; }
+  .mcic-nav-links     { display: flex; }
+}

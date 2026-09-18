@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 800" role="img">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f5e9e4"/>
+      <stop offset="1" stop-color="#dfc2b4"/>
+    </linearGradient>
+  </defs>
+  <rect width="600" height="800" fill="url(#bg)"/>
+  <circle cx="510" cy="110" r="140" fill="#ffffff" opacity="0.35"/>
+  <circle cx="80" cy="700" r="170" fill="#ffffff" opacity="0.25"/>
+  
+  <rect x="274" y="520" width="52" height="80" rx="12" fill="#754a24"/>
+  <path d="M115,800 C125,655 215,605 300,605 C385,605 475,655 485,800 Z" fill="#7f2d3b"/>
+  <polygon points="258,606 300,662 300,606" fill="#ffffff" opacity="0.92"/>
+  <polygon points="342,606 300,662 300,606" fill="#ffffff" opacity="0.92"/>
+  <ellipse cx="300" cy="415" rx="100" ry="118" fill="#9c6a3e"/>
+  <circle cx="201" cy="428" r="17" fill="#9c6a3e"/>
+  <circle cx="399" cy="428" r="17" fill="#9c6a3e"/>
+  <path d="M198,425 C194,300 246,252 300,252 C354,252 406,300 402,425 L380,425 C384,335 348,308 300,308 C252,308 216,335 220,425 Z" fill="#232323"/><rect x="194" y="395" width="24" height="70" rx="12" fill="#232323"/><rect x="382" y="395" width="24" height="70" rx="12" fill="#232323"/>
+  
+  <circle cx="266" cy="428" r="9.5" fill="#262626"/>
+  <circle cx="334" cy="428" r="9.5" fill="#262626"/>
+  <path d="M270,472 Q300,494 330,472" stroke="#754a24" stroke-width="7" stroke-linecap="round" fill="none"/>
+  
+</svg>

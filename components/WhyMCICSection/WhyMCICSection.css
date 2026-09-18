@@ -1,0 +1,88 @@
+/* ── Why MCIC Section ─────────────────────────────────────────────────────────── */
+.why-mcic-section {
+  padding: 3rem 0 3.5rem;
+  background-color: #fff;
+}
+
+.why-mcic-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.why-mcic-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5rem;
+  align-items: center;
+}
+
+/* ── Text ──────────────────────────────────────────────────────────────────────── */
+.why-mcic-block {
+  margin-bottom: 1.75rem;
+}
+
+.why-mcic-block:last-child {
+  margin-bottom: 0;
+}
+
+.why-mcic-heading {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #032b41;
+  margin: 0 0 0.85rem;
+}
+
+.why-mcic-bar {
+  display: inline-block;
+  width: 5px;
+  height: 1.3rem;
+  background-color: #cc0000;
+  border-radius: 3px;
+  flex-shrink: 0;
+}
+
+.why-mcic-para {
+  font-size: 0.97rem;
+  line-height: 1.8;
+  color: #444;
+  text-align: justify;
+  margin: 0 0 0.65rem;
+}
+
+.why-mcic-para.indent {
+  text-indent: 2rem;
+}
+
+/* ── Image ──────────────────────────────────────────────────────────────────────── */
+.why-mcic-image-wrap {
+  overflow: hidden;
+  border-radius: 4px;
+  transition: transform 0.5s ease-out;
+  transform-origin: left;
+}
+
+.why-mcic-image-wrap:hover {
+  transform: scale(1.02);
+}
+
+.why-mcic-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  border: 1px solid #dee2e6;
+  border-radius: 4px;
+}
+
+/* ── Responsive ──────────────────────────────────────────────────────────────── */
+@media (max-width: 767px) {
+  .why-mcic-row {
+    grid-template-columns: 1fr;
+  }
+  .why-mcic-image-wrap {
+    order: -1;
+  }
+}

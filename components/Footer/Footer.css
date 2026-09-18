@@ -1,0 +1,153 @@
+/* ── Footer ──────────────────────────────────────────────────────────────────── */
+.mcic-footer {
+  background-color: #032b41;
+  color: #fff;
+  padding-top: 2.5rem;
+}
+
+.mcic-footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* ── Grid ──────────────────────────────────────────────────────────────────────── */
+.mcic-footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 2fr;
+  gap: 2.5rem;
+  padding-bottom: 1.5rem;
+}
+
+/* ── Column headings ──────────────────────────────────────────────────────────── */
+.mcic-footer-heading {
+  text-transform: uppercase;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: #ffb703;
+  margin: 0 0 1rem;
+}
+
+/* ── Text ──────────────────────────────────────────────────────────────────────── */
+.mcic-footer-text {
+  font-size: 0.88rem;
+  line-height: 1.7;
+  color: rgba(255,255,255,0.78);
+  margin: 0 0 0.6rem;
+}
+
+.mcic-footer-text.myanmar {
+  font-size: 0.82rem;
+}
+
+/* ── Links list ──────────────────────────────────────────────────────────────── */
+.mcic-footer-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.mcic-footer-link {
+  color: rgba(255,255,255,0.8);
+  text-decoration: none;
+  font-size: 0.88rem;
+  transition: color 0.2s;
+}
+
+.mcic-footer-link:hover {
+  color: #ffb703;
+}
+
+.mcic-footer-link.break-all {
+  word-break: break-all;
+}
+
+/* ── Contact items ───────────────────────────────────────────────────────────── */
+.mcic-footer-contact-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  margin-bottom: 0.85rem;
+  font-size: 0.88rem;
+  color: rgba(255,255,255,0.8);
+}
+
+.mcic-footer-address {
+  font-style: normal;
+  line-height: 1.6;
+  color: rgba(255,255,255,0.8);
+  font-size: 0.88rem;
+}
+
+/* ── Divider ──────────────────────────────────────────────────────────────────── */
+.mcic-footer-divider {
+  border: none;
+  border-top: 1px solid rgba(255,255,255,0.15);
+  margin: 0.5rem 0;
+}
+
+/* ── Bottom bar ───────────────────────────────────────────────────────────────── */
+.mcic-footer-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 0 1rem;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.mcic-footer-copy {
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.65);
+  margin: 0;
+}
+
+/* ── Social buttons ──────────────────────────────────────────────────────────── */
+.mcic-footer-socials {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.mcic-social-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border: 1px solid rgba(255,255,255,0.35);
+  border-radius: 50%;
+  color: #fff;
+  text-decoration: none;
+  transition: border-color 0.2s, background-color 0.2s, color 0.2s;
+}
+
+.mcic-social-btn:hover {
+  border-color: #ffb703;
+  background-color: rgba(255, 183, 3, 0.15);
+  color: #ffb703;
+}
+
+/* ── Responsive ──────────────────────────────────────────────────────────────── */
+@media (max-width: 767px) {
+  .mcic-footer-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  .mcic-footer-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .mcic-footer-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .mcic-footer-col:first-child {
+    grid-column: 1 / -1;
+  }
+}

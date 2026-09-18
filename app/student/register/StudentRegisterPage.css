@@ -1,0 +1,289 @@
+/* ── Student Registration Page ─────────────────────────────────────────────── */
+
+.register-page {
+  min-height: 80vh;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 2.5rem 1.25rem 3rem;
+  background: linear-gradient(135deg, #f0f4f8 0%, #e8eef3 100%);
+}
+
+/* Card */
+.register-card {
+  width: 100%;
+  max-width: 720px;
+  background: #fff;
+  border-radius: 6px;
+  box-shadow: 0 4px 24px rgba(3, 43, 65, 0.12);
+  overflow: hidden;
+}
+
+.register-card-body {
+  padding: 2rem 2.25rem;
+}
+
+/* Title */
+.register-title {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #032b41;
+  margin: 0 0 1.75rem;
+  padding-left: 0.85rem;
+  border-left: 4px solid #cc0000;
+  line-height: 1.3;
+}
+
+/* Row (two columns on desktop) */
+.register-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+@media (max-width: 767px) {
+  .register-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Field */
+.register-field {
+  margin-bottom: 1.1rem;
+}
+
+.register-label {
+  display: block;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: #032b41;
+  margin-bottom: 0.4rem;
+}
+
+.required {
+  color: #cc0000;
+  margin-left: 2px;
+}
+
+/* Input wrapper with icon */
+.register-input-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.register-input-wrap .field-icon {
+  position: absolute;
+  left: 0.75rem;
+  width: 20px;
+  height: 20px;
+  color: rgba(3, 43, 65, 0.55);
+  pointer-events: none;
+  flex-shrink: 0;
+}
+
+.register-input {
+  width: 100%;
+  padding: 0.55rem 0.75rem 0.55rem 2.5rem;
+  font-size: 0.92rem;
+  color: #032b41;
+  background: #fff;
+  border: 1px solid #c8d0d6;
+  border-radius: 4px;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  font-family: inherit;
+}
+
+.register-input:focus {
+  border-color: #032b41;
+  box-shadow: 0 0 0 3px rgba(3, 43, 65, 0.08);
+}
+
+.register-input.invalid {
+  border-color: #e63946;
+  background-color: rgba(230, 57, 70, 0.04);
+}
+
+.register-select {
+  appearance: none;
+  -webkit-appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%23032b41' viewBox='0 0 16 16'%3E%3Cpath d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.75rem center;
+  padding-right: 2.25rem;
+}
+
+/* Error message */
+.register-error {
+  display: block;
+  font-size: 0.82rem;
+  color: #e63946;
+  margin-top: 0.35rem;
+}
+
+/* Hint */
+.register-hint {
+  font-size: 0.8rem;
+  color: #888;
+  margin: 0.25rem 0 0;
+}
+
+/* Major pills */
+.register-majors {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-top: 0.3rem;
+}
+
+.register-major-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.35rem 0.9rem;
+  background: #fff8e1;
+  border: 1px solid #ffb703;
+  border-radius: 999px;
+  cursor: pointer;
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: #032b41;
+  transition: background-color 0.2s, box-shadow 0.2s;
+  user-select: none;
+}
+
+.register-major-pill:hover {
+  background: #ffecb3;
+}
+
+.register-major-pill input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  accent-color: #032b41;
+  cursor: pointer;
+  margin: 0;
+}
+
+/* Submit row */
+.register-submit-row {
+  display: flex;
+  justify-content: center;
+  margin-top: 1.75rem;
+}
+
+/* ── Primary Register Button ──────────────────────────────────────────────── */
+.register-btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  width: 100%;
+  max-width: 360px;
+  padding: 1rem 2.25rem;
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  color: #fff;
+  background: #032b41;
+  background-image: linear-gradient(135deg, #032b41 0%, #054a6e 100%);
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(3, 43, 65, 0.18);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Subtle shimmer overlay on hover */
+.register-btn::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.08), transparent);
+  transform: translateX(-100%);
+  transition: transform 0.5s ease;
+}
+
+.register-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(3, 43, 65, 0.28);
+}
+
+.register-btn:hover:not(:disabled)::before {
+  transform: translateX(100%);
+}
+
+.register-btn:active:not(:disabled) {
+  transform: translateY(0);
+  box-shadow: 0 2px 8px rgba(3, 43, 65, 0.18);
+}
+
+.register-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* Right arrow icon that slides on hover */
+.register-btn .btn-icon {
+  transition: transform 0.25s ease;
+}
+
+.register-btn:hover:not(:disabled) .btn-icon {
+  transform: translateX(3px);
+}
+
+/* Spinner inside button */
+.register-btn .btn-spinner {
+  width: 18px;
+  height: 18px;
+  border: 2.5px solid rgba(255, 255, 255, 0.35);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: btnSpin 0.8s linear infinite;
+}
+
+@keyframes btnSpin {
+  to { transform: rotate(360deg); }
+}
+
+/* Success state */
+.register-success {
+  text-align: center;
+  padding: 1.5rem 0;
+}
+
+.register-success svg {
+  width: 56px;
+  height: 56px;
+  color: #009b4d;
+  margin-bottom: 1rem;
+}
+
+.register-success h4 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #032b41;
+  margin: 0 0 0.5rem;
+}
+
+.register-success p {
+  font-size: 0.95rem;
+  color: #555;
+  margin: 0 0 1.5rem;
+}
+
+/* Responsive */
+@media (max-width: 767px) {
+  .register-card-body {
+    padding: 1.5rem 1.25rem;
+  }
+
+  .register-title {
+    font-size: 1.2rem;
+  }
+}
