@@ -44,6 +44,12 @@ const UniversityBlock: React.FC<UniversityBlockProps> = ({
   </section>
 );
 
+const toParagraphs = (text: string): string[] =>
+  text
+    .split(/\n\s*\n/)
+    .map((p) => p.trim())
+    .filter(Boolean);
+
 export default function AboutPage() {
   return (
     <>
@@ -56,12 +62,11 @@ export default function AboutPage() {
           imageAlt={section.title}
           imageLeft={section.imagePosition === "left"}
         >
-          {section.content && (
-            <div
-              className="about-content"
-              dangerouslySetInnerHTML={{ __html: section.content.replace(/\n\n/g, "<br/><br/>") }}
-            />
-          )}
+          {toParagraphs(section.content).map((para, i) => (
+            <p key={i} className="about-para justify">
+              {para}
+            </p>
+          ))}
         </UniversityBlock>
       ))}
 

@@ -62,8 +62,19 @@ export default function HomePage() {
             Educational Partnership of MCU
           </h3>
           <div className="partnership-grid">
-            {STATIC_PARTNERSHIPS.map((p, i) =>
-              p.linkUrl ? (
+            {STATIC_PARTNERSHIPS.map((p, i) => {
+              const nameLines = (
+                <p className="partnership-name">
+                  {p.title.split(" ").slice(0, Math.ceil(p.title.split(" ").length / 2)).join(" ")}
+                  <br />
+                  {p.title.split(" ").slice(Math.ceil(p.title.split(" ").length / 2)).join(" ")}
+                </p>
+              );
+              const logo = p.imageUrl ? (
+                // eslint-disable-next-line @next/next/no-img-element
+                <img src={p.imageUrl} alt={p.title} loading="lazy" className="partnership-logo" />
+              ) : null;
+              return p.linkUrl ? (
                 <a
                   key={i}
                   href={p.linkUrl}
@@ -71,22 +82,16 @@ export default function HomePage() {
                   rel="noopener noreferrer"
                   className="partnership-card"
                 >
-                  <p className="partnership-name">
-                    {p.title.split(" ").slice(0, Math.ceil(p.title.split(" ").length / 2)).join(" ")}
-                    <br />
-                    {p.title.split(" ").slice(Math.ceil(p.title.split(" ").length / 2)).join(" ")}
-                  </p>
+                  {logo}
+                  {nameLines}
                 </a>
               ) : (
                 <div key={i} className="partnership-card">
-                  <p className="partnership-name">
-                    {p.title.split(" ").slice(0, Math.ceil(p.title.split(" ").length / 2)).join(" ")}
-                    <br />
-                    {p.title.split(" ").slice(Math.ceil(p.title.split(" ").length / 2)).join(" ")}
-                  </p>
+                  {logo}
+                  {nameLines}
                 </div>
-              )
-            )}
+              );
+            })}
           </div>
         </div>
       </section>

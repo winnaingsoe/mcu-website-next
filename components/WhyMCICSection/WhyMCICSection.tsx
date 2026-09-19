@@ -2,6 +2,12 @@ import React from "react";
 import { WHY_MCU_ITEMS, WHY_MCU_IMAGE } from "@/lib/data";
 import "./WhyMCICSection.css";
 
+const toParagraphs = (text: string): string[] =>
+  text
+    .split(/\n\s*\n/)
+    .map((p) => p.trim())
+    .filter(Boolean);
+
 const WhyMCICSection: React.FC = () => {
   return (
     <section className="why-mcic-section">
@@ -15,12 +21,11 @@ const WhyMCICSection: React.FC = () => {
                   <span className="why-mcic-bar" />
                   {item.title}
                 </h3>
-                {item.content && (
-                  <div
-                    className="why-mcic-content"
-                    dangerouslySetInnerHTML={{ __html: item.content }}
-                  />
-                )}
+                {toParagraphs(item.content).map((para, i) => (
+                  <p key={i} className="why-mcic-para">
+                    {para}
+                  </p>
+                ))}
               </div>
             ))}
           </div>

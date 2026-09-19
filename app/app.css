@@ -4,7 +4,7 @@
 
 body {
   margin: 0;
-  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  font-family: var(--font-body), system-ui, -apple-system, 'Segoe UI', sans-serif;
 }
 
 /* Page loading spinner */

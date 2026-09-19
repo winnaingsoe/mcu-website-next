@@ -57,7 +57,7 @@ export const STATIC_ARTICLES: Article[] = [
     slug: "mcu-partners-with-international-universities",
     excerpt:
       "MCU collaborates with partner universities in Thailand and Russia to offer bachelor, master and doctoral pathways.",
-    content: `<p>MCU provides quality in teaching, research and learning in collaboration with partnership international universities around the world, including Tomsk State University, Thaksin University, KMITL and Metharath University.</p>`,
+    content: `<p>MCU provides quality in teaching, research and learning in collaboration with partnership international universities around the world, including Tomsk State University, Thak­sin University, KMITL and Metha­rath University.</p>`,
     thumbnail: "/assets/3.jpg",
     createdAt: "2026-03-05T00:00:00.000Z",
     category: { name: "News" },
@@ -127,7 +127,7 @@ export const STATIC_ABOUT_SECTIONS: AboutSection[] = [
     id: 1,
     title: "ABOUT MCU",
     content:
-      "Myanmar Creative University (MCU) is a non-profit higher educational institute and Christian Missionary College of MCMC for the youth ethnic occupational development towards the national development and peace. MCU was started as a migrant education center since 2009 and upgraded into a university located at No. (44), 2nd Floor, Bishop Home, Pyay Road, Dagon Township, Yangon, Myanmar. Since its inception, youth from undeveloped areas in border regions and migrant students have been able to learn vocational and university education in collaboration with international universities, carrying out international education opportunities and research activities.\n\nIn 2020, MCU Founder, staffs and students were involved in COVID-19 prevention and treatment activities as volunteers, and were awarded by the Myanmar government. In 2023, MCU won the Best Social Project Towards Education award by Asia Education Conclave.",
+      "Myanmar Creative University (MCU) is a non-profit higher educational institute and Christian Mis­sion­ary College of MCMC for the youth ethnic occupational development towards the national development and peace. MCU was started as a migrant education center since 2009 and upgraded into a university located at No. (44), 2nd Floor, Bishop Home, Pyay Road, Dagon Township, Yangon, Myanmar. Since its inception, youth from undeveloped areas in border regions and migrant students have been able to learn vocational and university education in collaboration with international universities, carrying out international education opportunities and research activities.\n\nIn 2020, MCU Founder, staffs and students were involved in COVID-19 prevention and treatment activities as volunteers, and were awarded by the Myanmar government. In 2023, MCU won the Best Social Project Towards Education award by Asia Education Conclave.",
     imageUrl: "/assets/mcu_university.jpg",
     imagePosition: "right",
   },
@@ -143,7 +143,7 @@ export const STATIC_ABOUT_SECTIONS: AboutSection[] = [
     id: 3,
     title: "ABOUT KMITL",
     content:
-      "King Mongkut's Institute of Technology Ladkrabang is an institute established under the King Mongkut's Institute of Technology Ladkrabang, King Mongkut's Institute of Technology Thonburi, and King Mongkut's Institute of Technology North Bangkok Act of 1985. As a legal entity, it is classified as a university affairs office, with the goals of studying, analysing, enriching, and providing services in technology, science, and technical education, including maintaining the art and culture of the country. On 8th March 2008, King Mongkut's Institute of Technology Ladkrabang changed its status to an autonomous university, as announced in the Royal Thai Government Gazette, Book 125, Part 45, Series A, published on 7 March 2008.",
+      "King Mong­kut's Institute of Technology Lad­kra­bang is an institute established under the King Mong­kut's Institute of Technology Lad­kra­bang, King Mong­kut's Institute of Technology Thon­buri, and King Mong­kut's Institute of Technology North Bang­kok Act of 1985. As a legal entity, it is classified as a university affairs office, with the goals of studying, analysing, enriching, and providing services in technology, science, and technical education, including maintaining the art and culture of the country. On 8th March 2008, King Mong­kut's Institute of Technology Lad­kra­bang changed its status to an autonomous university, as announced in the Royal Thai Government Gazette, Book 125, Part 45, Series A, published on 7 March 2008.",
     imageUrl: "/assets/kmitl_university.jpg",
     imagePosition: "right",
   },
@@ -151,7 +151,7 @@ export const STATIC_ABOUT_SECTIONS: AboutSection[] = [
     id: 4,
     title: "ABOUT THAKSIN UNIVERSITY",
     content:
-      "Thaksin University is a public university in Southern Thailand, located in Maung Songkhla District, Songkhla Province. Previously a branch campus of Srinakharinwirot University, it grew and became a separate institution, established as an independent public university on 1 September 1996.\n\nThe university offers undergraduate, and doctoral degrees in Sciences, Medical Sciences, Social Sciences and Humanities. It has a special International Graduate Program offering research-based Ph.D. programs under the supervision of senior academics from international universities.",
+      "Thak­sin University is a public university in Southern Thailand, located in Maung Song­khla District, Song­khla Province. Previously a branch campus of Sri­nakha­rin­wirot University, it grew and became a separate institution, established as an independent public university on 1 September 1996.\n\nThe university offers undergraduate, and doctoral degrees in Sciences, Medical Sciences, Social Sciences and Humanities. It has a special International Graduate Program offering research-based Ph.D. programs under the supervision of senior academics from international universities.",
     imageUrl: "/assets/thaksin_university.jpg",
     imagePosition: "left",
   },
@@ -159,7 +159,7 @@ export const STATIC_ABOUT_SECTIONS: AboutSection[] = [
     id: 5,
     title: "ABOUT MRU",
     content:
-      "Metharath University, formerly Shinawatra University, is a private international university in Thailand, established by Thaksin Shinawatra and his colleagues. The campus was designed and developed by Soontorn Boonyatikarn in 1997. The Ministry of University Affairs granted the license for operation in 1999.\n\nMetharath University stands as a testament to the power of unity in diversity, where students and educators collaborate to create an inclusive and nurturing environment. You will find yourself surrounded by supportive mentors and fellow students, all eager to exchange ideas and experiences, enriching each other's understanding of the world.",
+      "Metha­rath University, formerly Shina­watra University, is a private international university in Thailand, established by Thak­sin Shina­watra and his colleagues. The campus was designed and developed by Soon­torn Boon­yati­karn in 1997. The Ministry of University Affairs granted the license for operation in 1999.\n\nMetha­rath University stands as a testament to the power of unity in diversity, where students and educators collaborate to create an inclusive and nurturing environment. You will find yourself surrounded by supportive mentors and fellow students, all eager to exchange ideas and experiences, enriching each other's understanding of the world.",
     imageUrl: "/assets/mru_university.jpg",
     imagePosition: "right",
   },
@@ -195,21 +195,22 @@ export const WHY_MCU_IMAGE = "/assets/mcu_university.jpg";
 export interface Partnership {
   title: string;
   linkUrl: string;
+  imageUrl?: string;
 }
 
 export const STATIC_PARTNERSHIPS: Partnership[] = [
-  { title: "Myanmar Christ's Mission Co-operation Board", linkUrl: "" },
-  { title: "International Organization for Migration", linkUrl: "https://www.iom.int/" },
-  { title: "Tomsk State University", linkUrl: "https://en.tsu.ru/" },
-  { title: "Thaksin University", linkUrl: "https://www.tsu.ac.th/en/" },
-  { title: "King Mongkut's Institute of Technology Ladkrabang", linkUrl: "https://www.kmitl.ac.th/en/" },
-  { title: "Rajamangala University of Technology, Krungthep", linkUrl: "https://www.rmutk.ac.th/" },
-  { title: "Metharath University", linkUrl: "https://www.metharath.com/" },
-  { title: "Pathumthani University", linkUrl: "https://internationalcollege.ptu.ac.th/" },
-  { title: "Australian Prime Institute", linkUrl: "https://www.prime.edu.au/" },
-  { title: "Burmese Migrant Workers' Education Committee", linkUrl: "https://www.bmwec.org/" },
-  { title: "K'Paw Htaw Health, Education & Development Foundation", linkUrl: "" },
-  { title: "Health Education and Literacy Project", linkUrl: "" },
+  { title: "Myanmar Christ's Mission Co-operation Board", linkUrl: "", imageUrl: "/logo/mcmcb_logo.svg" },
+  { title: "International Organization for Migration", linkUrl: "https://www.iom.int/", imageUrl: "/logo/iom_logo.svg" },
+  { title: "Tomsk State University", linkUrl: "https://en.tsu.ru/", imageUrl: "/logo/tomsk_logo.svg" },
+  { title: "Thak­sin University", linkUrl: "https://www.tsu.ac.th/en/", imageUrl: "/logo/thaksin_logo.svg" },
+  { title: "King Mong­kut's Institute of Technology Lad­kra­bang", linkUrl: "https://www.kmitl.ac.th/en/", imageUrl: "/logo/kmitl.svg" },
+  { title: "Rajamangala University of Technology, Krungthep", linkUrl: "https://www.rmutk.ac.th/", imageUrl: "/logo/rmutk.svg" },
+  { title: "Metha­rath University", linkUrl: "https://www.metharath.com/", imageUrl: "/logo/mru_logo.svg" },
+  { title: "Pathumthani University", linkUrl: "https://internationalcollege.ptu.ac.th/", imageUrl: "/logo/pathumthani_logo.svg" },
+  { title: "Australian Prime Institute", linkUrl: "https://www.prime.edu.au/", imageUrl: "/logo/api_logo.svg" },
+  { title: "Burmese Migrant Workers' Education Committee", linkUrl: "https://www.bmwec.org/", imageUrl: "/logo/bmwec_logo.svg" },
+  { title: "K'Paw Htaw Health, Education & Development Foundation", linkUrl: "", imageUrl: "/logo/kph_logo.svg" },
+  { title: "Health Education and Literacy Project", linkUrl: "", imageUrl: "/logo/help_logo.svg" },
 ];
 
 export interface BoardMember {

@@ -16,9 +16,11 @@
 .articles-heading {
   display: flex;
   align-items: center;
-  gap: 0.65rem;
-  font-size: 1.2rem;
-  font-weight: 700;
+  gap: 0.7rem;
+  font-family: var(--font-head), Georgia, 'Times New Roman', serif;
+  font-size: 1.45rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
   color: #fff;
   margin-bottom: 1.5rem;
 }
