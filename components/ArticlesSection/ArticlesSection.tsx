@@ -55,12 +55,16 @@ interface ArticlesSectionProps {
 
 const ArticlesSection: React.FC<ArticlesSectionProps> = ({ articles = [], loading = false }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [slidesPerView, setSlidesPerView] = useState(2);
+  const [slidesPerView, setSlidesPerView] = useState(3);
+  const [step, setStep] = useState(0);
   const trackRef = useRef<HTMLDivElement>(null);
 
-  // Responsive slides per view
+  // Responsive slides per view: 1 mobile, 2 tablet, 3 desktop
   useEffect(() => {
-    const update = () => setSlidesPerView(window.innerWidth < 768 ? 1 : 2);
+    const update = () => {
+      const w = window.innerWidth;
+      setSlidesPerView(w < 768 ? 1 : w < 1100 ? 2 : 3);
+    };
     update();
     window.addEventListener("resize", update);
     return () => window.removeEventListener("resize", update);
@@ -69,6 +73,31 @@ const ArticlesSection: React.FC<ArticlesSectionProps> = ({ articles = [], loadin
   const items = loading ? Array(4).fill(null) : articles;
 
   const maxIndex = Math.max(0, items.length - slidesPerView);
+
+  // Keep index in range when the viewport tier changes
+  useEffect(() => {
+    setCurrentIndex((i) => Math.min(i, maxIndex));
+  }, [maxIndex]);
+
+  // Measure one exact slide step (card width + grid gap) in px so the
+  // track translation never drifts, at any slides-per-view tier
+  useEffect(() => {
+    const measure = () => {
+      const track = trackRef.current;
+      const first = track?.children[0] as HTMLElement | undefined;
+      if (track && first) {
+        const gap = parseFloat(getComputedStyle(track).columnGap) || 0;
+        setStep(first.offsetWidth + gap);
+      }
+    };
+    measure();
+    window.addEventListener("resize", measure);
+    const t = setTimeout(measure, 500);
+    return () => {
+      window.removeEventListener("resize", measure);
+      clearTimeout(t);
+    };
+  }, [slidesPerView, articles.length, loading]);
 
   const prev = useCallback(() => setCurrentIndex((i) => Math.max(0, i - 1)), []);
   const next = useCallback(
@@ -81,10 +110,18 @@ const ArticlesSection: React.FC<ArticlesSectionProps> = ({ articles = [], loadin
   return (
     <section className="articles-section">
       <div className="articles-container">
-        <h4 className="articles-heading">
-          <span className="articles-heading-bar" />
-          Latest Articles
-        </h4>
+        <div className="articles-head-row">
+          <h4 className="articles-heading">
+            <span className="articles-heading-bar" />
+            Latest Articles
+          </h4>
+          <Link className="articles-view-all" href="/article">
+            View all articles
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.2} d="M5 12h14M12 5l7 7-7 7" />
+            </svg>
+          </Link>
+        </div>
 
         <div className="articles-slider-wrap">
           {/* Prev arrow */}
@@ -118,8 +155,8 @@ const ArticlesSection: React.FC<ArticlesSectionProps> = ({ articles = [], loadin
                 className="articles-slider-track"
                 ref={trackRef}
                 style={{
-                  transform: `translateX(-${currentIndex * (100 / slidesPerView)}%)`,
-                  gridTemplateColumns: `repeat(${items.length}, calc(${100 / slidesPerView}% - 0.75rem))`,
+                  transform: `translateX(${-currentIndex * step}px)`,
+                  gridTemplateColumns: `repeat(${items.length}, calc(${100 / slidesPerView}% - ${((slidesPerView - 1) * 1.5) / slidesPerView}rem))`,
                 }}
               >
                 {items.map((article, i) =>
