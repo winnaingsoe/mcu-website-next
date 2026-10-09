@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import Footer from "@/components/Footer/Footer";
 import { STATIC_ARTICLES, getArticleBySlug } from "@/lib/data";
 import "./ArticleDetailPage.css";
 
@@ -79,7 +78,6 @@ export default async function ArticleDetailPage({
           </div>
         </div>
       </div>
-      <Footer />
     </>
   );
 }

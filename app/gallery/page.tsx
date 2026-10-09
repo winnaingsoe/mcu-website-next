@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useState, useCallback } from "react";
-import Footer from "@/components/Footer/Footer";
 import { STATIC_GALLERIES, type GalleryImage } from "@/lib/data";
 import "./GalleryPage.css";
 
@@ -15,8 +14,14 @@ interface LightboxProps {
 const Lightbox: React.FC<LightboxProps> = ({ images, startIndex, onClose }) => {
   const [current, setCurrent] = useState(startIndex);
 
-  const prev = () => setCurrent((c) => (c - 1 + images.length) % images.length);
-  const next = () => setCurrent((c) => (c + 1) % images.length);
+  const prev = React.useCallback(
+    () => setCurrent((c) => (c - 1 + images.length) % images.length),
+    [images.length]
+  );
+  const next = React.useCallback(
+    () => setCurrent((c) => (c + 1) % images.length),
+    [images.length]
+  );
 
   const handleBackdrop = (e: React.MouseEvent<HTMLDivElement>) => {
     if (e.target === e.currentTarget) onClose();
@@ -31,7 +36,7 @@ const Lightbox: React.FC<LightboxProps> = ({ images, startIndex, onClose }) => {
     };
     window.addEventListener("keydown", handler);
     return () => window.removeEventListener("keydown", handler);
-  });
+  }, [prev, next, onClose]);
 
   const currentImage = images[current];
 
@@ -150,6 +155,13 @@ export default function GalleryPage() {
     document.body.style.overflow = "";
   }, []);
 
+  // Safety: reset scroll lock if the page unmounts with the lightbox open.
+  React.useEffect(() => {
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, []);
+
   const filtered = STATIC_GALLERIES.filter((g) =>
     g.name.toLowerCase().includes(search.toLowerCase())
   );
@@ -201,7 +213,6 @@ export default function GalleryPage() {
         <Lightbox images={lightbox.images} startIndex={lightbox.index} onClose={closeLightbox} />
       )}
 
-      <Footer />
     </>
   );
 }

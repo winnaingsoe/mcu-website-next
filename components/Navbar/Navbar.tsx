@@ -105,10 +105,15 @@ const Navbar: React.FC = () => {
   const pathname = usePathname();
   const navRef = useRef<HTMLElement>(null);
 
-  // Close mobile menu on route change
+  // Close mobile menu on route change (covers back/forward navigation;
+  // link clicks already close via onClick handlers). Deferred to a callback
+  // so the effect body itself doesn't call setState synchronously.
   useEffect(() => {
-    setMenuOpen(false);
-    setProgrammeOpen(false);
+    const id = requestAnimationFrame(() => {
+      setMenuOpen(false);
+      setProgrammeOpen(false);
+    });
+    return () => cancelAnimationFrame(id);
   }, [pathname]);
 
   // Close mobile menu on outside click

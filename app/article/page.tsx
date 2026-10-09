@@ -2,7 +2,6 @@
 
 import React, { useState, useMemo } from "react";
 import Link from "next/link";
-import Footer from "@/components/Footer/Footer";
 import { STATIC_ARTICLES, STATIC_CATEGORIES, type Article } from "@/lib/data";
 import "./BlogPage.css";
 
@@ -135,7 +134,6 @@ export default function BlogPage() {
           )}
         </div>
       </div>
-      <Footer />
     </>
   );
 }

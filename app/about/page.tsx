@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Footer from "@/components/Footer/Footer";
 import { STATIC_ABOUT_SECTIONS, STATIC_MAP_URL } from "@/lib/data";
 import "./AboutPage.css";
 
@@ -89,7 +88,6 @@ export default function AboutPage() {
         </div>
       </div>
 
-      <Footer />
     </>
   );
 }
