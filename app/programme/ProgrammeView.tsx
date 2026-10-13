@@ -136,7 +136,7 @@ export const ProgrammeDetail: React.FC<{ title: string; items: ProgrammeItem[] }
 
   return (
     <main className="prog-main">
-      <h3 className="prog-main-title">{title}</h3>
+      <h1 className="prog-main-title">{title}</h1>
       {items.map((item, i) => (
         <ExpansionPanel
           key={i}
@@ -156,10 +156,10 @@ export const SubProgrammeNav: React.FC<{
   subProgrammes: SubProgramme[];
 }> = ({ programme, subProgrammes }) => (
   <main className="prog-main">
-    <h3 className="prog-main-title">
+    <h1 className="prog-main-title">
       <span className="prog-title-bar" />
       {programme.title}
-    </h3>
+    </h1>
     <p className="prog-nav-intro">Please select a partner university to view programme details.</p>
     <nav className="prog-nav-pills">
       {subProgrammes.map((sp) => (

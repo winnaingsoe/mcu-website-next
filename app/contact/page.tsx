@@ -68,7 +68,7 @@ export default function ContactPage() {
       <div className="contact-page" style={{ backgroundImage: "url(/assets/contact.jpg)" }}>
         <div className="contact-card">
           <div className="contact-card-body">
-            <h3 className="contact-title">Contact Us</h3>
+            <h1 className="contact-title">Contact Us</h1>
 
             {status === "success" ? (
               <div className="contact-success">

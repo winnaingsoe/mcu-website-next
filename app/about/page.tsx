@@ -52,6 +52,7 @@ const toParagraphs = (text: string): string[] =>
 export default function AboutPage() {
   return (
     <>
+      <h1 className="sr-only">About Myanmar Creative University</h1>
       {STATIC_ABOUT_SECTIONS.map((section) => (
         <UniversityBlock
           key={section.id}

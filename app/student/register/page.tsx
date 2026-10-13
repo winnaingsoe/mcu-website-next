@@ -138,7 +138,7 @@ export default function StudentRegisterPage() {
       <div className="register-page">
         <div className="register-card">
           <div className="register-card-body">
-            <h3 className="register-title">Student Registration</h3>
+            <h1 className="register-title">Student Registration</h1>
 
             {status === "success" ? (
               <div className="register-success">
