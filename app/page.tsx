@@ -1,7 +1,6 @@
 import HeroCarousel from "@/components/HeroCarousel/HeroCarousel";
 import ArticlesSection from "@/components/ArticlesSection/ArticlesSection";
 import WhyMCICSection from "@/components/WhyMCICSection/WhyMCICSection";
-import Footer from "@/components/Footer/Footer";
 import { STATIC_ARTICLES, STATIC_BOARD_GROUPS, STATIC_PARTNERSHIPS } from "@/lib/data";
 import type { BoardMember } from "@/lib/data";
 
@@ -96,7 +95,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      <Footer />
     </>
   );
 }

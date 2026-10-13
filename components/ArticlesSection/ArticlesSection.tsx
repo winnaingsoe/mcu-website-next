@@ -74,10 +74,9 @@ const ArticlesSection: React.FC<ArticlesSectionProps> = ({ articles = [], loadin
 
   const maxIndex = Math.max(0, items.length - slidesPerView);
 
-  // Keep index in range when the viewport tier changes
-  useEffect(() => {
-    setCurrentIndex((i) => Math.min(i, maxIndex));
-  }, [maxIndex]);
+  // Keep the rendered index in range when the viewport tier changes.
+  // Derived during render instead of syncing back via an effect.
+  const clampedIndex = Math.min(currentIndex, maxIndex);
 
   // Measure one exact slide step (card width + grid gap) in px so the
   // track translation never drifts, at any slides-per-view tier
@@ -128,7 +127,7 @@ const ArticlesSection: React.FC<ArticlesSectionProps> = ({ articles = [], loadin
           <button
             className="articles-arrow prev"
             onClick={prev}
-            disabled={currentIndex === 0}
+            disabled={clampedIndex === 0}
             aria-label="Previous"
           >
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
@@ -155,7 +154,7 @@ const ArticlesSection: React.FC<ArticlesSectionProps> = ({ articles = [], loadin
                 className="articles-slider-track"
                 ref={trackRef}
                 style={{
-                  transform: `translateX(${-currentIndex * step}px)`,
+                  transform: `translateX(${-clampedIndex * step}px)`,
                   gridTemplateColumns: `repeat(${items.length}, calc(${100 / slidesPerView}% - ${((slidesPerView - 1) * 1.5) / slidesPerView}rem))`,
                 }}
               >
@@ -174,7 +173,7 @@ const ArticlesSection: React.FC<ArticlesSectionProps> = ({ articles = [], loadin
           <button
             className="articles-arrow next"
             onClick={next}
-            disabled={currentIndex >= maxIndex}
+            disabled={clampedIndex >= maxIndex}
             aria-label="Next"
           >
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
@@ -189,7 +188,7 @@ const ArticlesSection: React.FC<ArticlesSectionProps> = ({ articles = [], loadin
             {Array.from({ length: maxIndex + 1 }).map((_, i) => (
               <button
                 key={i}
-                className={`articles-dot${i === currentIndex ? " active" : ""}`}
+                className={`articles-dot${i === clampedIndex ? " active" : ""}`}
                 onClick={() => setCurrentIndex(i)}
                 aria-label={`Go to slide ${i + 1}`}
               />

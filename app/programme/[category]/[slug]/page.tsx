@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import Footer from "@/components/Footer/Footer";
 import {
   ALL_PROGRAMME_GROUPS,
   findProgramme,
@@ -55,7 +54,6 @@ export default async function ProgrammePage({
           <ProgrammesSidebar currentPath={currentPath} />
         </div>
       </div>
-      <Footer />
     </>
   );
 }

@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useState, useCallback } from "react";
-import Footer from "@/components/Footer/Footer";
 import { STATIC_STUDENT_LEVELS } from "@/lib/data";
 import "./StudentRegisterPage.css";
 
@@ -377,7 +376,6 @@ export default function StudentRegisterPage() {
           </div>
         </div>
       </div>
-      <Footer />
     </>
   );
 }
