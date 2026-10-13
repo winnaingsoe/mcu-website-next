@@ -105,6 +105,38 @@
   background-color: rgba(255, 255, 255, 0.8);
 }
 
+/* ── Prev / Next arrows ─────────────────────────────────────────────────────── */
+.hero-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 3;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(3, 43, 65, 0.55);
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.hero-arrow svg {
+  width: 22px;
+  height: 22px;
+}
+
+.hero-arrow:hover {
+  background-color: #ffb703;
+  color: #032b41;
+}
+
+.hero-prev { left: 1rem; }
+.hero-next { right: 1rem; }
+
 /* ── Responsive ──────────────────────────────────────────────────────────────── */
 @media (max-width: 767px) {
   .hero-carousel { height: 55vw; min-height: 260px; }
@@ -112,4 +144,8 @@
   .hero-caption-text  { font-size: 0.8rem; }
   .hero-caption-extra { display: none; }
   .hero-caption-box   { padding: 0.6rem 0.85rem; }
+  .hero-arrow { width: 34px; height: 34px; }
+  .hero-arrow svg { width: 17px; height: 17px; }
+  .hero-prev { left: 0.5rem; }
+  .hero-next { right: 0.5rem; }
 }

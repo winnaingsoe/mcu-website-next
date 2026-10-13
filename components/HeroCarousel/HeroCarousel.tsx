@@ -14,11 +14,15 @@ const HeroCarousel: React.FC = () => {
     setCurrent((c) => (c + 1) % HERO_SLIDES.length);
   }, []);
 
+  const prev = useCallback(() => {
+    setCurrent((c) => (c - 1 + HERO_SLIDES.length) % HERO_SLIDES.length);
+  }, []);
+
   useEffect(() => {
     if (paused || HERO_SLIDES.length <= 1) return;
     const timer = setInterval(next, INTERVAL);
     return () => clearInterval(timer);
-  }, [paused, next]);
+  }, [paused, next, current]);
 
   return (
     <div
@@ -49,6 +53,19 @@ const HeroCarousel: React.FC = () => {
           <p className="hero-caption-text">{HERO_DEFAULT_TEXT}</p>
         </div>
       </div>
+
+      {/* Prev / Next arrows */}
+      <button className="hero-arrow hero-prev" onClick={prev} aria-label="Previous slide">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M15 18l-6-6 6-6" />
+        </svg>
+      </button>
+
+      <button className="hero-arrow hero-next" onClick={next} aria-label="Next slide">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 18l6-6-6-6" />
+        </svg>
+      </button>
 
       {/* Dot indicators */}
       <div className="hero-dots">
