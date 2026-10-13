@@ -45,7 +45,7 @@ const HeroCarousel: React.FC = () => {
       {/* Caption */}
       <div className="hero-caption">
         <div className="hero-caption-box">
-          <h3 className="hero-caption-title">Myanmar Creative University</h3>
+          <h1 className="hero-caption-title">Myanmar Creative University</h1>
           <p className="hero-caption-text">{HERO_DEFAULT_TEXT}</p>
         </div>
       </div>

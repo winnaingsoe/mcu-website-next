@@ -71,6 +71,7 @@ export default function BlogPage() {
   return (
     <>
       <div className="blog-page">
+        <h1 className="sr-only">Blog – News, Events and Announcements</h1>
         <div className="blog-container">
           {/* ── Search + chips bar ── */}
           <div className="blog-toolbar">

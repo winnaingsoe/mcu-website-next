@@ -169,6 +169,7 @@ export default function GalleryPage() {
   return (
     <>
       <div className="gallery-page">
+        <h1 className="sr-only">Gallery of Myanmar Creative University</h1>
         <div className="gallery-container">
           {/* Toolbar */}
           <div className="gallery-toolbar">

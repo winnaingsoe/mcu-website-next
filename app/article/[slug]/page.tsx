@@ -15,7 +15,7 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { slug } = await params;
   const article = getArticleBySlug(slug);
-  return { title: article ? `${article.title} • MCU` : "Article not found • MCU" };
+  return { title: article ? `${article.title} • MCU` : "Article not found • MCU", description: article?.excerpt };
 }
 
 const authorName = (a?: { username: string; firstName?: string; lastName?: string }): string => {
@@ -54,7 +54,7 @@ export default async function ArticleDetailPage({
               </div>
             )}
 
-            <h2 className="ad-title">{article.title}</h2>
+            <h1 className="ad-title">{article.title}</h1>
 
             <div className="ad-meta-row">
               <p className="ad-author">{authorName(article.author)}</p>
